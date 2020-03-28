@@ -28,7 +28,6 @@ namespace phonetic {
 		if (!check(text, word)) throw std::invalid_argument( "error" );// בדיקות
 		vector<string> result ;
 		split1(text, result);
-        //split(result, text, is_space());
 		for (int i=0; i<result.size(); ++i){
 			if(result[i].length() == word.length()){
 				if(checkWord(result[i], word))
@@ -43,12 +42,17 @@ namespace phonetic {
 			return false;
 		vector<string> result;
 		split1(text, result);
+		try{
+			for (int i =0; i<result.size();++i){
+				printf("%c\n", result[i]);
+			}
+		} catch{}
 		if (result.size() > 1) return false;
 		return true;
 	}
 	
 	bool checkWord(string resultI, string word){
-		int arr[]={0,1,2,3,4,1,2,7,8,9,2,11,12,13,14,1,16,17,18,3,14,21,21,23,8,18};
+		int arr[26]={0,1,2,3,4,1,2,7,8,9,2,11,12,13,14,1,16,17,18,3,14,21,21,23,8,18};
 		transform(resultI.begin(), resultI.end(), resultI.begin(), ::tolower);
 		
 		for (int i=0; i<resultI.size(); ++i){
