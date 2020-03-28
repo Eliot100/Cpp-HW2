@@ -28,7 +28,7 @@ namespace phonetic {
 		if (!check(text, word)) throw std::invalid_argument( "error" );// בדיקות
 		vector<string> result ;
 		split1(text, result);
-		for (int i=0; i<result.size(); ++i){
+		for (int i=0; i < result.size(); ++i){
 			if(result[i].length() == word.length()){
 				if(checkWord(result[i], word))
 					return result[i];
@@ -41,12 +41,12 @@ namespace phonetic {
 		if (text.length() == 0 || word.length() == 0)
 			return false;
 		vector<string> result;
-		split1(text, result);
-		try{
-			for (int i =0; i<result.size();++i){
-				cout << result[i];
-			}
-		} catch(std::exception e){}
+		split1(word, result);
+		//try{
+		//	for (int i =0; i<result.size();++i){
+		//		cout << result[i];
+		//	}
+		//} catch(std::exception e){}
 		if (result.size() > 1) return false;
 		return true;
 	}
