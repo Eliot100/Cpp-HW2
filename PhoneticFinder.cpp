@@ -13,7 +13,17 @@
 
 namespace phonetic {
     using namespace std;
-    using namespace boost::algorithm;
+	
+	//http://www.martinbroadhurst.com/how-to-split-a-string-in-c.html
+
+	template <class Container>
+	void split1(const std::string& str, Container& cont){
+		std::istringstream iss(str);
+		std::copy(std::istream_iterator<std::string>(iss),
+			std::istream_iterator<std::string>(),
+			std::back_inserter(cont));
+	}
+	
 	std::string find(string text, string word ){
 		if (!check(text, word)) throw std::invalid_argument( "error" );// בדיקות
 		vector<string> result ;
@@ -50,13 +60,5 @@ namespace phonetic {
 		return true;
 	}
 	
-	//http://www.martinbroadhurst.com/how-to-split-a-string-in-c.html
-
-	template <class Container>
-	void split1(const std::string& str, Container& cont){
-		std::istringstream iss(str);
-		std::copy(std::istream_iterator<std::string>(iss),
-			std::istream_iterator<std::string>(),
-			std::back_inserter(cont));
-	}
+	
 }
