@@ -10,10 +10,11 @@
 
 namespace phonetic {
     using namespace std;
-	using namespace boost;
+    using namespace boost::algorithm;
 	std::string find(string text, string word ){
 		if (!check(text, word)) throw std::invalid_argument( "error" );// בדיקות
-		vector<string> result = text.split(' ');
+		vector<string> result ;
+        split(result, text, is_space());
 		for (int i=0; i<result.size(); ++i){
 			if(result[i].length() == word.length()){
 				if(checkWord(result[i], word))
