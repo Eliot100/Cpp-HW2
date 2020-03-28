@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include <stdbool.h>
-#include "Phoneticfinder.hpp"
+#include "PhoneticFinder.hpp"
 
 /*
 * @author Eli, Ron and Tal
