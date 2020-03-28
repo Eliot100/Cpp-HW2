@@ -1,6 +1,5 @@
-//#include <bits/stdc++.h> 
-//#include <boost/algorithm/string.hpp.
-#include <boost>
+#include <vector>
+#include <iostream>
 #include <string>
 #include <stdbool.h>
 #include "Phoneticfinder.hpp"
@@ -14,8 +13,7 @@ namespace phonetic {
 	using namespace boost;
 	std::string find(string text, string word ){
 		if (!check(text, word)) throw std::invalid_argument( "error" );// בדיקות
-		vector<string> result; 
-		boost::split(result, text, boost::is_any_of(" "));
+		vector<string> result = text.split(' ');
 		for (int i=0; i<result.size(); ++i){
 			if(result[i].length() == word.length()){
 				if(checkWord(result[i], word))
@@ -28,9 +26,8 @@ namespace phonetic {
 	bool check(string text, string word){
 		if (text.length() == 0 || word.length() == 0)
 			return false;
-		vector<string> result2; 
-		boost::split(result2, word, boost::is_any_of(" "));
-		if (result2.size() > 1) return false;
+		vector<string> result = text.split(' ');
+		if (result.size() > 1) return false;
 		return true;
 	}
 	
