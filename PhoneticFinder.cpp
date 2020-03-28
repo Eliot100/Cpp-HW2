@@ -1,5 +1,5 @@
 #include <bits/stdc++.h> 
-#include <boost/algorithm/string.hpp>
+//#include <boost/algorithm/string.hpp>
 #include <string>
 
 /*
@@ -8,6 +8,7 @@
 
 namespace phonetic {
     using namespace std;
+	using namespace boost;
 	std::string find(string text, string word ){
 		if (!check(text, word)) throw std::invalid_argument( "error" );// בדיקות
 		vector<string> result; 
