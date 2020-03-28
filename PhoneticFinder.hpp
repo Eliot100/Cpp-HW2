@@ -8,4 +8,5 @@ using namespace std;
 namespace phonetic {
 	std::string find(string text, string realWord);
 	bool checkWord(string resultI, string word);
+	bool check(string text, string word);
 };
