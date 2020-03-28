@@ -28,7 +28,7 @@ namespace phonetic {
 		vector<string> result ;
 		split1(text, result);
 		for (int i=0; i < result.size(); ++i){
-			if(result[i].length() == word.length() && checkWord(result[i], word){
+			if(result[i].length() == word.length() && checkWord(result[i], word)){
 				return result[i];
 			}
 		}
