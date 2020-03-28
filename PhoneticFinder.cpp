@@ -15,7 +15,6 @@ namespace phonetic {
     using namespace std;
 	
 	//http://www.martinbroadhurst.com/how-to-split-a-string-in-c.html
-
 	template <class Container>
 	void split1(const std::string& str, Container& cont){
 		std::istringstream iss(str);
@@ -29,9 +28,8 @@ namespace phonetic {
 		vector<string> result ;
 		split1(text, result);
 		for (int i=0; i < result.size(); ++i){
-			if(result[i].length() == word.length()){
-				if(checkWord(result[i], word))
-					return result[i];
+			if(result[i].length() == word.length() && checkWord(result[i], word){
+				return result[i];
 			}
 		}
 		throw std::invalid_argument( "error" );
@@ -52,7 +50,7 @@ namespace phonetic {
 	}
 	
 	bool checkWord(string resultI, string word){
-		int arr[26]={0,1,2,3,4,1,2,7,8,9,2,11,12,13,14,1,16,17,18,3,14,21,21,23,8,18};
+		int arr[26]={0,1,2,3,4,1,6,7,8,6,2,11,12,13,14,1,2,17,18,3,14,21,21,23,8,18};
 		transform(resultI.begin(), resultI.end(), resultI.begin(), ::tolower);
 		
 		for (int i=0; i<resultI.size(); ++i){
