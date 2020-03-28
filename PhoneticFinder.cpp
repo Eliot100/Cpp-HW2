@@ -28,7 +28,7 @@ namespace phonetic {
 		vector<string> result ;
 		split1(text, result);
 		for (int i=0; i < result.size(); ++i){
-			if(result[i].length() == word.length() && checkWord(result[i], word)){
+			if(result[i].length() == word.length() && checkWord(result[i], word){
 				return result[i];
 			}
 		}
@@ -52,6 +52,7 @@ namespace phonetic {
 	bool checkWord(string resultI, string word){
 		int arr[26]={0,1,2,3,4,1,6,7,8,6,2,11,12,13,14,1,2,17,18,3,14,21,21,23,8,18};
 		transform(resultI.begin(), resultI.end(), resultI.begin(), ::tolower);
+		transform(word.begin(), word.end(), word.begin(), ::tolower);
 		
 		for (int i=0; i<resultI.size(); ++i){
 			int x = resultI[i] - 'a';
