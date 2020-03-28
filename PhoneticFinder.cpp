@@ -48,7 +48,7 @@ namespace phonetic {
 	}
 	
 	bool checkWord(string resultI, string word){
-		int arr[26]=[0,1,2,3,4,1,2,7,8,9,2,11,12,13,14,1,16,17,18,3,14,21,21,23,8,18];
+		int arr[]={0,1,2,3,4,1,2,7,8,9,2,11,12,13,14,1,16,17,18,3,14,21,21,23,8,18};
 		transform(resultI.begin(), resultI.end(), resultI.begin(), ::tolower);
 		
 		for (int i=0; i<resultI.size(); ++i){
