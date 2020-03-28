@@ -1,5 +1,6 @@
 #include <vector>
 #include <iostream>
+#include <boost/algorithm/string.hpp>
 #include <string>
 #include <stdbool.h>
 #include "PhoneticFinder.hpp"
