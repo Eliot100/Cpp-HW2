@@ -1,5 +1,6 @@
-#include <bits/stdc++.h> 
-//#include <boost/algorithm/string.hpp>
+//#include <bits/stdc++.h> 
+//#include <boost/algorithm/string.hpp.
+#include <boost>
 #include <string>
 #include <stdbool.h>
 #include "Phoneticfinder.hpp"
