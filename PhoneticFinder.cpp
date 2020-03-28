@@ -1,7 +1,9 @@
 #include <vector>
 #include <iostream>
-#include <boost/algorithm/string.hpp>
 #include <string>
+#include <sstream>
+#include <algorithm>
+#include <iterator>
 #include <stdbool.h>
 #include "PhoneticFinder.hpp"
 
@@ -15,7 +17,8 @@ namespace phonetic {
 	std::string find(string text, string word ){
 		if (!check(text, word)) throw std::invalid_argument( "error" );// בדיקות
 		vector<string> result ;
-        split(result, text, is_space());
+		split1(text, result);
+        //split(result, text, is_space());
 		for (int i=0; i<result.size(); ++i){
 			if(result[i].length() == word.length()){
 				if(checkWord(result[i], word))
@@ -28,7 +31,8 @@ namespace phonetic {
 	bool check(string text, string word){
 		if (text.length() == 0 || word.length() == 0)
 			return false;
-		vector<string> result = text.split(' ');
+		vector<string> result;
+		split1(text, result);
 		if (result.size() > 1) return false;
 		return true;
 	}
@@ -44,5 +48,15 @@ namespace phonetic {
 				return false;
 		}
 		return true;
+	}
+	
+	//http://www.martinbroadhurst.com/how-to-split-a-string-in-c.html
+
+	template <class Container>
+	void split1(const std::string& str, Container& cont){
+		std::istringstream iss(str);
+		std::copy(std::istream_iterator<std::string>(iss),
+			std::istream_iterator<std::string>(),
+			std::back_inserter(cont));
 	}
 }
