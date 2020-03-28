@@ -44,9 +44,9 @@ namespace phonetic {
 		split1(text, result);
 		try{
 			for (int i =0; i<result.size();++i){
-				printf("%c\n", result[i]);
+				cout << result[i];
 			}
-		} catch{}
+		} catch(std::exception e){}
 		if (result.size() > 1) return false;
 		return true;
 	}
